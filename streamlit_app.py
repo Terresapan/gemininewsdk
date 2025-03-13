@@ -2,7 +2,6 @@ import streamlit as st
 import os
 from main import GeminiChatBackend
 import tempfile
-import time
 
 # Set up page configuration
 st.set_page_config(page_title="Gemini Chatbot", page_icon="🤖", layout="wide")
@@ -65,7 +64,7 @@ def init_backend():
         return False
 
 # App title
-st.title("Gemini Chatbot")
+st.title("Gemini2.0 New SDK Test")
 
 # Create tabs for different functionalities
 chat_tab, file_tab, data_analytics_tab, image_tab = st.tabs(["Chat Mode", "File Analysis Mode", "Data Analytics Mode", "Image Generation Mode"])
