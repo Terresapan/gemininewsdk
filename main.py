@@ -25,11 +25,11 @@ class GeminiChatBackend:
             
         self.client = genai.Client(api_key=self.api_key)
         self.chat = None
-        self.model_id = "gemini-2.0-flash"
+        self.model_id = "gemini-2.5-flash"
         self.search_enabled = False
         self.code_execution_enabled = False
         
-    def initialize_chat(self, model_id="gemini-2.0-flash", system_instruction=None, temperature=0.5, search_enabled=False, code_execution_enabled=False):
+    def initialize_chat(self, model_id="gemini-2.5-flash", system_instruction=None, temperature=0.5, search_enabled=False, code_execution_enabled=False):
         """
         Initialize a new chat session.
         
@@ -509,7 +509,7 @@ class GeminiChatBackend:
         try:
             # Use the Imagen model for image generation
             result = self.client.models.generate_images(
-                model="imagen-3.0-generate-002",
+                model="gemini-2.0-flash-preview-image-generation",
                 prompt=prompt,
                 config=dict(
                     number_of_images=number_of_images,
