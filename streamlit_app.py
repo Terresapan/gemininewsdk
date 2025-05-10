@@ -64,7 +64,7 @@ def init_backend():
         return False
 
 # App title
-st.title("Gemini2.0 New SDK Test")
+st.title("Gemini2.5 New SDK Test")
 
 # Create tabs for different functionalities
 chat_tab, file_tab, data_analytics_tab, image_tab = st.tabs(["Chat Mode", "File Analysis Mode", "Data Analytics Mode", "Image Generation Mode"])
@@ -87,11 +87,11 @@ with st.sidebar:
         st.session_state.chat_initialized = False
     
     # Model selection
-    model_options = ["gemini-2.5-flash", "gemini-2.5-pro-preview-05-06"]
+    model_options = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-pro-preview-05-06"]
     selected_model = st.selectbox(
         "Select Gemini Model",
         options=model_options,
-        index=model_options.index(st.session_state.get("model_id", "gemini-2.5-flash")),
+        index=model_options.index(st.session_state.get("model_id", "gemini-2.0-flash", "gemini-2.5-flash")),
         help="Choose which Gemini model to use"
     )
     
