@@ -91,7 +91,7 @@ with st.sidebar:
     selected_model = st.selectbox(
         "Select Gemini Model",
         options=model_options,
-        index=model_options.index(st.session_state.get("model_id", "gemini-2.0-flash", "gemini-2.5-flash")),
+        index=model_options.index(st.session_state.get("model_id", "gemini-2.0-flash")),
         help="Choose which Gemini model to use"
     )
     
