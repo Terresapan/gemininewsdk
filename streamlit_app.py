@@ -19,7 +19,7 @@ if "gemini_backend" not in st.session_state:
     st.session_state.search_enabled = False
     st.session_state.code_execution_enabled = False
     st.session_state.api_key = ""
-    st.session_state.model_id = "gemini-2.5-flash"
+    st.session_state.model_id = "gemini-2.5-flash-preview-04-17"
 
 def init_backend():
     """Initialize the backend if it's not already initialized"""
@@ -43,7 +43,7 @@ def init_backend():
         # Get the current settings
         search_enabled = st.session_state.get("search_enabled", False)
         code_execution_enabled = st.session_state.get("code_execution_enabled", False)
-        model_id = st.session_state.get("model_id", "gemini-2.5-flash")
+        model_id = st.session_state.get("model_id", "gemini-2.5-flash-preview-04-17")
         
         # Initialize the chat
         if backend.initialize_chat(
@@ -87,16 +87,16 @@ with st.sidebar:
         st.session_state.chat_initialized = False
     
     # Model selection
-    model_options = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-pro-preview-05-06"]
+    model_options = ["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-preview-05-06"]
     selected_model = st.selectbox(
         "Select Gemini Model",
         options=model_options,
-        index=model_options.index(st.session_state.get("model_id", "gemini-2.0-flash")),
+        index=model_options.index(st.session_state.get("model_id", "gemini-2.5-flash-preview-04-17")),
         help="Choose which Gemini model to use"
     )
     
     # Update model in session state if changed
-    if selected_model != st.session_state.get("model_id", "gemini-2.5-flash"):
+    if selected_model != st.session_state.get("model_id", "gemini-2.5-flash-preview-04-17"):
         st.session_state.model_id = selected_model
         st.session_state.chat_initialized = False
     
